@@ -19,3 +19,14 @@
         </div>
     </div>
 </div>
+
+<div class="card">
+    <h5 class="card-title">Comments</h5>
+    @foreach($post->comments as $comment)
+        <div class="card-body">
+            <div class="meta py-2 d-block">
+                {{ $comment->body}}
+            </div>
+        </div>
+    @endforeach
+</div>
