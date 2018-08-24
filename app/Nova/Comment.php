@@ -2,8 +2,10 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Comment extends Resource
@@ -13,7 +15,7 @@ class Comment extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Comment';
+    public static $model = 'App\\Models\\Comment';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -41,6 +43,9 @@ class Comment extends Resource
     {
         return [
             ID::make()->sortable(),
+            BelongsTo::make('User')->rules('required'),
+            BelongsTo::make('Post')->rules('required'),
+            Markdown::make('Body')->rules('required'),
         ];
     }
 
