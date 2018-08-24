@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::view('/', 'welcome');
+
+Route::group(['prefix' => 'posts', 'as' => 'posts.'], function($router){
+    $router->get('/', 'PostController@index')->name('index');
+    $router->get('{post}', 'PostController@show')->name('show');
 });
