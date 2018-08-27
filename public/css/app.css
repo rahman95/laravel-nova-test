@@ -14148,3 +14148,40 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.post h5 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #222222;
+}
+
+.post h6 {
+  color: #5B5B5B;
+}
+
+.post .meta span {
+  color: #636363;
+  display: block;
+}
+
+.post .action {
+  float: right;
+}
+
+.article .pic {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.article .meta {
+  padding-left: 1rem;
+  padding-right: 0;
+}
+
+.article .meta strong {
+  font-size: 1.15rem;
+}
+
+.article .meta .time {
+  color: #636363;
+}
+

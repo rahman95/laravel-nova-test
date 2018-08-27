@@ -1,32 +1,22 @@
-<div class="card">
-    <div class="card-body">
-        <div class="meta py-2 d-block">
-            <span>
-                <i class="fas fa-info-circle"></i>
-                {{ $post->subtitle }}
+<article class="container py-3">
+    <h1>{{ $post->title }}</h1>
+    <h3>{{ $post->subtitle }}</h3>
+    <div class="container row article">
+        <div class="col-sm-1 pic">
+            <img src="https://secure.gravatar.com/avatar/{{ md5($post->user->email) }}?size=512" class="img-fluid rounded mx-auto d-block"/>
+        </div>
+        <div class="col-sm-11 meta">
+            <span class="d-block">
+                <strong>
+                    {{$post->user->name}}
+                </strong>
             </span>
-            <span>
-                <i class="fas fa-user"></i>
-                {{$post->user->name}}
-            </span>
-            <span>
-                <i class="far fa-clock"></i>
+            <span class="d-block time">
                 {{$post->published_on}}
             </span>
-            <div class="card-text py-3">
-                @markdown($post->body)
-            </div>
         </div>
+        <span class="py-2">
+            @markdown($post->body)
+        </span>
     </div>
-</div>
-
-<div class="card">
-    <h5 class="card-title">Comments</h5>
-    @foreach($post->comments as $comment)
-        <div class="card-body">
-            <div class="meta py-2 d-block">
-                {{ $comment->body}}
-            </div>
-        </div>
-    @endforeach
-</div>
+</article>
